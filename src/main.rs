@@ -30,16 +30,7 @@ fn main() {
     //start_loop().unwrap();
     let mut rl = DefaultEditor::new().unwrap();
     loop {
-        // print!("Prompt: ");
-        // io::stdout().flush().unwrap();
-
-        // let mut buffer = String::new();
-        // io::stdin()
-        //     .read_line(&mut buffer)
-        //     .expect("Failed to read line");
-
-        // buffer = buffer.trim().to_string();
-        let buffer = rl.readline(">> ").unwrap();
+       let buffer = rl.readline(">> ").unwrap();
         let _ = rl.add_history_entry(buffer.as_str());
         let commands:Vec<_> = buffer.split(' ').collect();
         match *commands.as_slice() {
